@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>CastingObjects.Benchmark-20230106-211452</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.3, OS=Windows 10 (10.0.19044.2364/21H2/November2021Update)
+Intel Core i7-7500U CPU 2.70GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.400
+  [Host]     : .NET 6.0.8 (6.0.822.36306), X64 RyuJIT AVX2
+  DefaultJob : .NET 6.0.8 (6.0.822.36306), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>   Method</th><th>    Mean</th><th>Error</th><th>StdDev</th><th>  Median</th>
+</tr>
+</thead><tbody><tr><td>HardCast</td><td>0.0212 ns</td><td>0.0361 ns</td><td>0.0687 ns</td><td>0.0000 ns</td>
+</tr><tr><td>SafeCast</td><td>1.5215 ns</td><td>0.1130 ns</td><td>0.1429 ns</td><td>1.4411 ns</td>
+</tr><tr><td>MatchCast</td><td>1.1250 ns</td><td>0.0061 ns</td><td>0.0054 ns</td><td>1.1248 ns</td>
+</tr><tr><td>OfType</td><td>25,553.6542 ns</td><td>415.4864 ns</td><td>426.6740 ns</td><td>25,408.3221 ns</td>
+</tr><tr><td>Cast_As</td><td>6,290.5737 ns</td><td>25.0484 ns</td><td>23.4303 ns</td><td>6,295.2576 ns</td>
+</tr><tr><td>Cast_Is</td><td>6,303.9593 ns</td><td>21.9248 ns</td><td>19.4357 ns</td><td>6,305.0816 ns</td>
+</tr><tr><td>HardCast_Is</td><td>9,792.2788 ns</td><td>33.4270 ns</td><td>26.0976 ns</td><td>9,803.1075 ns</td>
+</tr><tr><td>HardCast_As</td><td>9,491.2773 ns</td><td>30.0581 ns</td><td>28.1164 ns</td><td>9,493.5913 ns</td>
+</tr><tr><td>HardCast_TypeOf</td><td>9,375.9409 ns</td><td>68.0694 ns</td><td>63.6721 ns</td><td>9,342.1600 ns</td>
+</tr></tbody></table>
+</body>
+</html>
